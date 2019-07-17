@@ -8,10 +8,8 @@ int factorial(int n)
 {
   int i, result=1;
 
-  if(!n)
-    return 1;
-  if(n == 1)
-    return 1;
+  if(!n || n == 1)
+    return result;
   for(i=2; i<n; i++)
     result *= i;
   return result * n;

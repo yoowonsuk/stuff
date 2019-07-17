@@ -6,17 +6,15 @@
 
 int fibonacci(int n)
 {
-  static int arr[40];
+  static int arr[40] = {0, 1};
 
+  if(arr[n-1])
+    return arr[n-1];
   if(n == 1)
     return 0;
-  else if(n == 2)
-    return 1;
-  else if(arr[n])
-    return arr[n];
   else
-    arr[n] = fibonacci(n-1) + fibonacci(n-2);
-  return arr[n];
+    arr[n-1] = fibonacci(n-1) + fibonacci(n-2);
+  return arr[n-1];
 }
 
 int main(void)
