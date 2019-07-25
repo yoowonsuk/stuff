@@ -8,7 +8,7 @@
 
 int search(int (*mptr)[BLD_NUM], int bptr[], int dp[], int indegree[], int node, int desti)
 {
-  int q[BLD_NUM], f, r, i, j, temp, cnt, cpymat[BLD_NUM][BLD_NUM], max[BLD_NUM];
+  int /*q[BLD_NUM], f, r,*/ i, j, /*temp,*/ cnt, cpymat[BLD_NUM][BLD_NUM], max[BLD_NUM];
   cnt = node;
 
   for(i=0; i<node; i++)
@@ -24,20 +24,20 @@ while(cnt)
   {
     if(!indegree[i])
     {
-      q[r++] = i, cnt--;
+      /*q[r++] = i,*/ cnt--;
       if(dp[i] < bptr[i] + max[i])
         dp[i] = bptr[i] + max[i];
-    }
+   // }
 
-    while(f != r)
-    {
-      temp = q[f++];
+   // while(f != r)
+   // {
+   //   temp = q[f++];
       for(j=0; j<node; j++)
-        if(cpymat[temp][j])
+        if(cpymat[/*temp*/i][j])
         {
           if(dp[j] < dp[i] + bptr[j])
             dp[j] = dp[i] + bptr[j];
-          cpymat[temp][j]--, indegree[j]--;
+          cpymat[/*temp*/i][j]--, indegree[j]--;
         }
     }
   }
