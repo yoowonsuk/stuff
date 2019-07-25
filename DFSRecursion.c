@@ -24,6 +24,7 @@ int main(void)
      printf("Edge%d: ", i+1);
      scanf("%d %d", &x, &y);
      graph[x-1][y-1] = 1;
+     graph[y-1][x-1] = 1;
    }
    DFS(graph, visitV, startV-1);
    return 0;
@@ -35,13 +36,9 @@ void DFS(int (*gptr)[NODE], int * vptr, int startV)
   
   vptr[startV] = 1;
   printf("visit %d\n", startV+1);
-  curV = startV;
 
   for(i=0; i<NODE; i++)
-    if(gptr[curV][i] && !vptr[i])
-    {
-      vptr[i] = 1;
+    if(gptr[startV][i] && !vptr[i])
       DFS(gptr, vptr, i);
-    }
 
 }
