@@ -27,6 +27,7 @@ while(cnt)
       /*q[r++] = i,*/ cnt--;
 //      if(dp[i] < bptr[i] + max[i])
         dp[i] = bptr[i] + max[i];
+        indegree[i]--;
    // }
 
    // while(f != r)
