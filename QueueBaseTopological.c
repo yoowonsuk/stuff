@@ -35,8 +35,8 @@ while(cnt)
       for(j=0; j<node; j++)
         if(cpymat[/*temp*/i][j])
         {
-          if(dp[j] < dp[i] + bptr[j])
-            dp[j] = dp[i] + bptr[j];
+          if(max[j] < dp[i])
+            max[j] = dp[i];
           cpymat[/*temp*/i][j]--, indegree[j]--;
         }
     }
