@@ -22,6 +22,14 @@ filetype on
 filetype plugin on
 filetype indent on
  
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugin
+Plugin 'majutsushi/tagbar'
+call vundle#end()
+nmap <F2> : Tagbar<CR>
+
 " Store temporary files in a central spot
 " $ mkdir ~/.vim-tmp  # or whatever
 " set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -49,5 +57,23 @@ set scrolloff=4        " keep 4 lines off the edges of the screen when scrolling
 set cino=:0,g0      " indent of case of switch 
 autocmd FileType java :set cino=:0 "지정된 filetype에 대해 cindent를 적용한다
 
-let @a = 'i#include <stdio.h>#include <stdlib.h>#include <string.h>#include <time.h>#include <math.h>int main(void){  '
-let @b = 'i#include <iostream>#include <cstring>#include <string>using std::cout;using std::endl;using std::cin;/*using namespace std;*/int main(void){ '
+let @a = 'i#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <math.h>
+
+int main(void)
+{
+  '
+let @b = 'i#include <iostream>
+#include <cstring>
+#include <string>
+using std::cout;
+using std::endl;
+using std::cin;
+/*using namespace std;*/
+
+int main(void)
+{
+ '
