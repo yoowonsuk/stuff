@@ -59,3 +59,6 @@ autocmd FileType java :set cino=:0 "지정된 filetype에 대해 cindent를 적�
 
 let @a = 'i#include <stdio.h>#include <stdlib.h>#include <string.h>#include <time.h>#include <math.h>int main(void){  '
 let @b = 'i#include <iostream>#include <cstring>#include <string>using std::cout;using std::endl;using std::cin;/*using namespace std;*/int main(void){ '
+
+set encoding=utf-8
+set fileencodings=utr-8,cp949
