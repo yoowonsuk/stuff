@@ -1,2 +1,8 @@
 https://stackoverflow.com/questions/60536386/why-is-my-app-a-different-size-on-my-yocto-build-server-compared-to-what-is-inst
 https://stackoverflow.com/questions/46071039/an-example-of-using-files-pn
+
+python 3.5를 쓰고 있다는건 host의 python을 사용하고 있다는 의미입니다. 관련 python 스크립트들이 host에 의존하지 않도록 수정해야 할 것 같네요.
+그래서 찾아보니 tools/scxml2gen/CMakeLists.txt 에 python 사용법이 이상하네요.
+include(FindPython3) 가 아니라 find_package(Python3 COMPONENTS Interpreter Development) 로 수정해보세요.
+
+그럼, ${Python3_EXECUTABLE} 를 그냥 python3로 바꿔보세요.
