@@ -1,0 +1,1 @@
+src     /my_mount/src_host  vboxsf  auto,rw,comment=systemd.automount 0 0
