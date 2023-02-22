@@ -22,13 +22,13 @@ filetype on
 filetype plugin on
 filetype indent on
  
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 
 " Plugin
-Plugin 'majutsushi/tagbar'
-call vundle#end()
-nmap <F2> : Tagbar<CR>
+" Plugin 'majutsushi/tagbar'
+" call vundle#end()
+" nmap <F2> : Tagbar<CR>
 
 " Store temporary files in a central spot
 " $ mkdir ~/.vim-tmp  # or whatever
