@@ -28,7 +28,8 @@ filetype indent on
 " Plugin
 " Plugin 'majutsushi/tagbar'
 " call vundle#end()
-" nmap <F2> : Tagbar<CR>
+set runtimepath+=
+nmap <F2> : Tagbar<CR>
 
 " Store temporary files in a central spot
 " $ mkdir ~/.vim-tmp  # or whatever
