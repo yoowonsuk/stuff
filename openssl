@@ -1,1 +1,17 @@
 openssl enc -d -aes-256-cbc -K 70617373776f726470617373776f726470617373776f726470617373776f7264 -iv 31323334353637383930313233343536 -in first -a
+
+for file in *.log
+do
+while read line; do
+  echo "$line" | openssl enc -d -aes-256-cbc -K 70617373776f726470617373776f726470617373776f726470617373776f7264 -iv 31323334353
+  echo
+done <$file >"$file.dec"
+done
+
+https://stackoverflow.com/questions/53221040/encrypt-file-line-by-line-using-openssl-on-unix
+https://gist.github.com/edwardstock/3c992fb71320391d3639696328a61115
+https://gist.github.com/barrysteyn/7308212
+
+https://www.openssl.org/docs/man1.0.2/man1/openssl-enc.html
+https://openssl-users.openssl.narkive.com/lFbBMFX0/trying-to-encrypt-with-openssl-commandline-and-decrypt-using-aes-or-evp
+https://www.openssl.org/docs/man3.1/man3/EVP_EncryptInit.html
